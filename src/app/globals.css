@@ -1,0 +1,167 @@
+:root {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+  --accent: #4f46e5;
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --card: rgba(15, 23, 42, 0.75);
+  --border: rgba(148, 163, 184, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1d4ed8, var(--background));
+  color: var(--foreground);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  width: min(1200px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(18px);
+}
+
+h1,
+ h2,
+ h3 {
+  margin-top: 0;
+}
+
+p {
+  margin: 0.75rem 0;
+  line-height: 1.65;
+}
+
+ul,
+ ol {
+  margin: 0.75rem 0 0.75rem 1.5rem;
+  padding: 0;
+}
+
+.highlight {
+  color: #c4b5fd;
+  font-weight: 600;
+}
+
+.tag-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.tag-card {
+  padding: 1rem;
+  border-radius: 14px;
+  background: rgba(30, 64, 175, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  transition: transform 0.2s ease, border 0.2s ease;
+}
+
+.tag-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(196, 181, 253, 0.6);
+}
+
+.metric-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.metric-card {
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a5b4fc;
+}
+
+.timing-bar {
+  display: grid;
+  grid-template-columns: repeat(24, minmax(0, 1fr));
+  gap: 2px;
+  margin-top: 1rem;
+}
+
+.timing-segment {
+  height: 12px;
+  border-radius: 4px;
+  background: rgba(148, 163, 184, 0.35);
+}
+
+.timing-segment.active {
+  background: rgba(79, 70, 229, 0.85);
+}
+
+.accordion {
+  margin-top: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  overflow: hidden;
+}
+
+.accordion button {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(15, 23, 42, 0.65);
+  color: inherit;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion button:hover {
+  background: rgba(79, 70, 229, 0.2);
+}
+
+.accordion p {
+  margin: 0;
+  padding: 0 1.25rem 1.25rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0 3rem;
+  color: rgba(226, 232, 240, 0.7);
+}
+
+@media (max-width: 600px) {
+  main {
+    width: calc(100% - 2rem);
+    padding: 2.5rem 0 4rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+}
